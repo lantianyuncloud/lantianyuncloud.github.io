@@ -1,63 +1,57 @@
-    const canvas = document.getElementById('myCanvas');//1.获取画布
-    const ctx = canvas.getContext('2d');//2.获取上下文
-    const strokeStyleSelect = document.getElementById('strokeColorSelect');//改变颜色控件
-    const strokeLineWidth = document.getElementById('strokeLineWidth');//改变线条宽度控件
-    canvas.restore()    
-
-    //按下标记
-    let isOnOff = false;
-    let oldX = null;
-    let oldY = null;
-
-    //设置画笔颜色
-    let lineColor = '#000';  //默认线条颜色为黑色
-
-    //设置画笔线宽
-    let lineWidth = 5;
-    strokeLineWidth.value = lineWidth; //初始化输入框的值,显示初始线条宽度
-
-    //添加鼠标移动事件
-    canvas.addEventListener('mousemove', draw, false);
-    //添加鼠标按下事件
-    canvas.addEventListener('mousedown', down, true);
-    //添加鼠标按下事件
-    canvas.addEventListener('mouseup', up, false);
-
-    function down(event) {
-        isOnOff = true;
-        oldX = event.clientX;
-        oldY = event.clientY;
-    }
-
-    function up() {
-        isOnOff = false;
-    }
-
-    function draw(event) {
-        if (isOnOff === true) {
-            let newX = event.clientX;
-            let newY = event.clientY;
-
-            ctx.beginPath();
-            ctx.moveTo(oldX, oldY);
-            ctx.lineTo(newX, newY);
-            ctx.strokeStyle = lineColor;
-            ctx.lineWidth = lineWidth;
-            ctx.lineCap = 'round';
+var $board = $(".board")[0]; //jquery对象与dom对象转换
+var ctx = $board.getContext("2d"); //创建画布对象
+var bool = false;
+var left = $(".board").offset().left; //获取画布的left值
+var top = $(".board").offset().top; //获取画布的top值
+var canvasW = $(".board").width(); //获取画布的宽度
+var canvasH = $(".board").height(); //获取画布的高度
+var img = []; //用于存放画布图片截图的数组
+ 
+ 
+window.onload = function() {
+    // draw();
+    ctx.lineCap = "round"; //设置线条的结束端点样式
+    ctx.lineJion = "round"; //设置两条线相交时，所创建的拐角类型
+    $(".board").mousedown(function(e) {
+        bool = true;
+        ctx.beginPath(); //起始/重置一条路径
+        ctx.moveTo(e.clientX - left, e.clientY - top); //把路径移动到画布中的指定点，不创建线条
+        var pic = ctx.getImageData(0, 0, canvasW, canvasH); //获取当前画布的图像
+        img.push(pic); //将当前图像存入数组
+        // ctx.moveTo(e.clientX, e.clientY);
+    })
+    $(".board").mousemove(function(e) {
+        console.log(bool);
+        if (bool) {
+            // ctx.lineTo(e.clientX, e.clientY);
+            ctx.lineTo(e.clientX - 10, e.clientY - 10); //添加一个新点，在画布中创建从该点到最后指定点的线条
             ctx.stroke();
-
-            oldX = newX;
-            oldY = newY;
         }
-    }
-    
-    strokeStyleSelect.onchange = function () {
-        lineColor = strokeStyleSelect.value;
-    };
-
-    strokeLineWidth.oninput = function () {
-        lineWidth = strokeLineWidth.value;
-    };
-    save.onclick = function () {
-        context.restore()
-    };
+    });
+    $(".board").mouseout(function(e) {
+        ctx.closePath(); //当鼠标移出画布区域时,创建从当前点回到起始点的路径
+        bool = false;
+    })
+    $(".board").mouseup(function(e) {
+ 
+        ctx.closePath(); //当鼠标抬起时,创建从当前点回到起始点的路径
+        bool = false;
+    })
+    $(".clear").click(function() {
+        ctx.clearRect(0, 0, canvasW, canvasH); //创建一个等大画布覆盖
+    });
+    $(".reset").click(function() {
+        if (img.length > -1) {
+            ctx.putImageData(img.pop(), 0, 0); //删除图像数组最后一位
+        }
+    })
+    $(".eraser").click(function() {
+        ctx.strokeStyle = "#fff";
+    });
+    $(".color").change(function() {
+        ctx.strokeStyle = this.value; //改变颜色
+    });
+    $(".range").change(function() {
+        ctx.lineWidth = this.value; //改变线条粗细
+    })
+}
