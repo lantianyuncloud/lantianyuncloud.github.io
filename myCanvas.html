@@ -1,24 +1,12 @@
 <title>寒冬利刃的网站|我的画板</title>
 <link rel="icon" type="image/x-icon" href="/favicon.png">
-<canvas id="myCanvas" class="myCanvas" width="800px" height="480px">
-    您的浏览器不支持canvas
-    <!-- canvas标签内的内容只有在浏览器不支持canvas的情况下才显示出来 -->  
-</canvas>
-
-<br/>
-
-<label for="strokeColorSelect">画笔颜色:</label>
-<select id="strokeColorSelect">
-    <option value="black">黑色</option>
-    <option value="blue">蓝色</option>
-    <option value="green">绿色</option>
-    <option value="yellow">黄色</option>
-    <option value="red">红色</option>
-</select>
-
-<br/>
-<label for="strokeLineWidth">线条宽度:</label>
-<input type="number" id="strokeLineWidth">
-<button id="save">保存</button>
-<link rel="stylesheet" type="text/css" href="/myCanvas.css">
-<script src="/myCanvas.js" type="text/javascript" charset="utf-8"></script>
+<div class="wrapper">
+        <canvas class="board" width="600px" height="300px">浏览器不支持画布！</canvas>
+        <div class="btn">
+            <input type="color" class="color">
+            <input type="button" value="清屏" class="clear">
+            <input type="button" value="撤销" class="reset">
+            <input type="button" value="橡皮" class="eraser">
+            <input type="range" class="range" min="2" max="20" value="5">
+        </div>
+    </div>
