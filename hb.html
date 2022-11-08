@@ -24,6 +24,9 @@
     const ctx = canvas.getContext('2d');
     //  将渲染颜色设置为 黑色 #000000
     ctx.strokeStyle = '#000000';
+    let lineWidth = 5;
+    strokeLineWidth.value = lineWidth
+    ctx.lineWidth = lineWidth
     //
     ctx.setLineDash([]);
     canvas.setAttribute('height', 500 + 'px');
