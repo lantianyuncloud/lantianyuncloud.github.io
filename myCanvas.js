@@ -2,7 +2,8 @@
     const ctx = canvas.getContext('2d');//2.获取上下文
     const strokeStyleSelect = document.getElementById('strokeColorSelect');//改变颜色控件
     const strokeLineWidth = document.getElementById('strokeLineWidth');//改变线条宽度控件
- 
+    context.restore()    
+
     //按下标记
     let isOnOff = false;
     let oldX = null;
@@ -56,4 +57,5 @@
 
     strokeLineWidth.oninput = function () {
         lineWidth = strokeLineWidth.value;
+    context.save()
     };
