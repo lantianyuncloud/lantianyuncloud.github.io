@@ -1,1 +1,15 @@
+        *{
+            margin:0;
+            padding:0;
+        }
 
+        body {
+            background: #DDD;
+        }
+
+        .myCanvas {
+            margin-top: 10px;
+            margin-left: 10px;
+            background: #FFF;
+            border: thin solid #AAA;
+        }
