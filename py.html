@@ -8,8 +8,15 @@
     <script defer src="\./pyscript.js"></script>
   </head>
   <body>
+      <py-config type="json">
+        {
+          "packages": ['tkinter','easygui']
+        }
+    </py-config>
     <py-script>
+import easygui as eg
 print('现在，我们可以在Web上运行Python了！')
+eg('现在，我们可以在Web上运行Python了！')
     </py-script>
     <py-script src="\./py.py"></py-script>
   </body>
