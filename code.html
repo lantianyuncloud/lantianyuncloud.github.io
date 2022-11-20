@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">coded()</script>
+<title>HTML Coded TEST </title>
+</head>
+
+<body>
+<p style="text-align: center;">这是一个HTML/CSS代码的测试软件</p>
+
+<div id = 'container' style="height: 500px; 1000px; bgcolor : #101010">
+<textarea autocomplete="off" id = "textareaCode" warp = "logical" spellcheck="false" stype="display:none;" style="height : 100%; 49%; background-color: #ffffc0; float: left" onkeypress="coded()">
+<!DOCTYPE html>
+<html>
+<head> </head>
+<body>
+<p>请输入你的HTML/CSS代码</p>
+</body>
+</html>
+</textarea>
+<div id = 'textareaCoded' style="height : 100%; width : 49%; background-color: #ffffd0; float: right" wrap="virtual">
+<p id = 'html_code'> 请输入你的HTML/CSS代码 </p>
+</div>
+</div>
+
+<div>
+<button type = 'button' id='bt' name = 'bt' onclick="coded()"> Coded </button>
+</div>
+
+<script>
+function coded(){
+var strCode = document.getElementById("textareaCode").value;
+document.getElementById("html_code").innerHTML = strCode;
+}
+</script>
+</body>
+</html>
