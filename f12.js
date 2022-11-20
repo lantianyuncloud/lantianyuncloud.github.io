@@ -8,7 +8,7 @@ document.onkeydown = document.onkeyup = document.onkeypress = function (event) {
 	}
 }
 function mAlert() {
-	alert("感谢使用管理平台，禁止对控制台进行操作！");
+	alert("F12开发者工具已禁用，如需管理网站，请与管理员联系！");
 }
 
 // 防止鼠标右键浏览器‘检查’操作
