@@ -13,5 +13,5 @@ if(r!=null)return unescape(r[2]); return null;
 }
 </script>
 <script>
-alert($URL.decode(GetQueryString("user")) + "说：" + $URL.decode(GetQueryString("say")));
+alert($URL.encode(GetQueryString("user")) + "说：" + $URL.encode(GetQueryString("say")));
 </script>
