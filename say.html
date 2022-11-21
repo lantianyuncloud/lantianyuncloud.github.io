@@ -13,5 +13,5 @@ if(r!=null)return unescape(r[2]); return null;
 }
 </script>
 <script>
-alert(urldecode(GetQueryString("user"), 'gbk', function(s) {console.log(s);}) + "说：" + "");
+alert(gbkDecode(GetQueryString("user")) + "说：" + "");
 </script>
