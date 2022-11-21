@@ -1,5 +1,5 @@
 <script type="text/javascript" src="\./package/gbk.js"></script>
-<script>
+<script type="text/javascript">
 function GetQueryString(name)
 
 {
@@ -13,4 +13,6 @@ if(r!=null)return unescape(r[2]); return null;
 }
 </script>
 <div></div>
-<script>div.innerHTML = GetQueryString("user") + "说：" + GetQueryString("msg")</script>
+<script type="text/javascript">
+div.innerHTML = GetQueryString("user") + "说：" + GetQueryString("msg")
+</script>
