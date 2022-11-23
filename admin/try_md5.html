@@ -6,7 +6,6 @@
         var div = document.querySelector('div')
         let a=md5_encode('寒冬利刃')
         let b=md5_encode('寒冬利刃')
-        var c=a + '\n' + b
-        div.innerHTML = c.replace(/(\n|\r|\r\n|↵)/g, '<br/>')
+        div.innerHTML = a + '<br>' + b
     </script>
 </body>
