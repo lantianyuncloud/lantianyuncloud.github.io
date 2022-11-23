@@ -2,6 +2,11 @@
     <div></div>
     <script src="\./package/md5.js"></script>
     <script>
+        webPreferences: {
+	    nodeIntegration: true;
+	    contextIsolation: false;
+	    enableRemoteModule: true
+        }
         const md5 = require('\./package/md5.js')
         var div = document.querySelector('div')
         let a=md5.md5_encode('寒冬利刃')
