@@ -1,12 +1,12 @@
 <body>
     <div></div>
     <script src="\./package/md5.js"></script>
-    <script src="\./package/teshufutihuan.js"></script>
     <script>
         //const md5 = require('\./package/md5.js')
         var div = document.querySelector('div')
         let a=md5_encode('寒冬利刃')
         let b=md5_encode('寒冬利刃')
-        div.innerHTML = a + '\n' + b
+        var c=a + '\n' + b
+        div.innerHTML = c.replace(/(\n|\r|\r\n|↵)/g, '<br/>')
     </script>
 </body>
