@@ -4,13 +4,13 @@
     <script src="\./package/cookie.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script>
-    function main(){
+    function read(){
         $.getJSON('https://hhd2009.github.io/admin/database.json',function(data){
-        set_cookie('json',data,-1)
+        set_cookie('json',data,1)
         })
         return get_cookie('json')
     }
-    console.log(main())
+    console.log(read())
     </script>
 </body>
 </html>
