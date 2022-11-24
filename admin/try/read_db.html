@@ -6,10 +6,9 @@
     <script>
     function main(){
         $.getJSON('https://hhd2009.github.io/admin/database.json',function(data){
-        var user=data.user
-        var password=data.password
+        set_cookie('json',data,-1)
         })
-        return user,password
+        return get_cookie('json')
     }
     console.log(main())
     </script>
