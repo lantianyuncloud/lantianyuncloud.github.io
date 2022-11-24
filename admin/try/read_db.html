@@ -1,1 +1,8 @@
-
+<body>
+    <div></div>
+    <script src="\./package/database.js"></script>
+    <script>
+        var div = document.querySelector('div')
+        div.innerHTML = read_db('\./admin/database.hdlrdb')
+    </script>
+</body>
