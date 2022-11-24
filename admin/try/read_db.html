@@ -4,10 +4,8 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script>
         $.getJSON('https://hhd2009.github.io/admin/database.json',function(data){
-        $('#result').html(`
-        姓名: ${data.user},<br>
-        年龄: ${data.password}
-    `   );
+        var user=data.user
+        var password=data.password
     });
     </script>
 </body>
