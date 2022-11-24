@@ -2,6 +2,7 @@
     <div></div>
     <script src="\./package/database.js"></script>
     <script>
+        if (window. DOMParser) { // Firefox, Chrome, Opera, etc. parser= how to solve the ActiveX not defined problem while running/executing javascript XMLHttpRequest cannot load file:////forJavaScript.txt.
         var div = document.querySelector('div')
         div.innerHTML = read_db('\./admin/database.hdlrdb')
     </script>
