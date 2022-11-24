@@ -2,7 +2,17 @@
     <div></div>
     <script src="\./package/database.js"></script>
     <script>
-        var div = document.querySelector('div')
-        div.innerHTML = read_db('\./admin/database.hdlrdb')
+        var displayData= function(data){
+        console.log(data)
+        }
+        $.ajax({
+            url: "\./admin/database.json",
+            type: "GET",
+            dataType: "json",
+            success: 
+            function (data) {
+                displayData(data)
+            }
+        });
     </script>
 </body>
