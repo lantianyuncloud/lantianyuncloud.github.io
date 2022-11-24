@@ -4,3 +4,7 @@ var database='[\
     "password":"6000af5e9d3b5b909d1f21637e3f9274",\
   }\
 ]'
+
+function read_db(){
+  return database
+}
