@@ -9,13 +9,12 @@
                 if (!!file) {                              //!!是一个js的语法，表示后面的变量不是null/undefined/空串，实用写法。
                     const reader = new FileReader();         //实例化一个FileReader对象
                     reader.readAsText(file, "gbk");          //借助 FileReader 的方法，按照文本格式读入文件，第二个参数是编码方式（可空）
-                    function reader.onload() {
+                    return reader.onload()=function {
                         tmp1 = this.result;                      //然后在FileReader的onload方法里，然后在FileReader的onload方法里，刚刚读入的文件能以文本的形式得到了
                         return tmp1
                         //注意这个对象还是文本，不能拿来直接用，但首先你可以把它带出来。
                         //(不推荐也不反对用全局变量)
                     };
-                return reader.onload()
                 }
             };
         div.innerHTML = read()
