@@ -8,8 +8,9 @@
         }
         
         function Ajax () {
-            $.getJSON("https://hhd2009.github.io/admin/database.json", function (data) {
-                displayData(data)//传入一个函数
+            $.getJSON("https://hhd2009.github.io/admin/database.json", 
+                function (data) {
+                    displayData(data)//传入一个函数
             });
         };
         Ajax()
