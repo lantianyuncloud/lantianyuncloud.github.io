@@ -1,6 +1,7 @@
 function checkuser(){
-  var user= <%=session.getAttribute("username")%>;
-  if(user==null) {
-    window.location.href="illegal.html"
+  var user=get_cookie('user')
+  var password=get_cookie('password')
+  if(user==null||password==null) {
+    window.location.href="\./admin/login"
   }
 }
