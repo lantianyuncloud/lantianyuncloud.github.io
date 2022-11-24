@@ -3,10 +3,14 @@
     <!--<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />-->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script>
+    function main(){
         $.getJSON('https://hhd2009.github.io/admin/database.json',function(data){
         var user=data.user
         var password=data.password
-    });
+        })
+        return user,password
+    }
+    console.log(main())
     </script>
 </body>
 </html>
