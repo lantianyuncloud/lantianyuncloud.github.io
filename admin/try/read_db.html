@@ -3,17 +3,12 @@
     <div></div>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script>
-        function displayData(data){
-            alert(data)
-        }
-        
-        function read() {
-            $.getJSON("https://hhd2009.github.io/admin/database.json", 
-                function (data) {
-                    displayData(data)//传入一个函数
-            });
-        };
-        read()
+        $.getJSON('http://hhd2009.github.io/admin/database.json',function(data){
+        $('#result').html(`
+        姓名: ${data.user},<br>
+        年龄: ${data.password}
+    `   );
+    });
     </script>
 </body>
 </html>
