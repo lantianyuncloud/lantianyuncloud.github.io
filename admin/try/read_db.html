@@ -7,15 +7,11 @@
             alert(data)
         }
         
-        $.ajax({
-            url: "https://hhd2009.github.io/admin/database.json",
-            type: "GET",
-            dataType: "json",
-            success: 
-            function (data) {
-                displayData(data)
-            }
-        });
+        var Ajax = function () {
+            $.getJSON("\./admin/database.json", function (data) {
+                displayData(data)//传入一个函数
+            });
+        }();
     </script>
 </body>
 </html>
