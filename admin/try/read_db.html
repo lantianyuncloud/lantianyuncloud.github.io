@@ -5,7 +5,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script>
     function read(){
-        $.getJSON('https://hhd2009.github.io/admin/database.json',function(data){
+        $.getJSON('https://hhd2009.github.io/admin/database.json',function (data){
         set_cookie('json',data,1)
         })
         return get_cookie('json')
