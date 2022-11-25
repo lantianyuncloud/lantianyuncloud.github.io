@@ -242,8 +242,8 @@ function login(){
 	var user=document.getElementById("useri").value
 	var password=document.getElementById("passwordi").value
 	//alert(user+','+password)
-	set_cookie('user',user,5)
-	set_cookie('password',password,5)
+	set_cookie('user',md5_encode(user),5)
+	set_cookie('password',md5_encode(password),5)
 	set_cookie('username',user,5)
 	window.location.href="\\./admin"
 }
