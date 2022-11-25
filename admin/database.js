@@ -1,6 +1,6 @@
 var database='{\
-  "data":["4d7d46f341ef6e354d07fa81a7384706","6000af5e9d3b5b909d1f21637e3f9274"],\
-  "text":["寒冬利刃"]\
+  "data":["4d7d46f341ef6e354d07fa81a7384706","6000af5e9d3b5b909d1f21637e3f9274","3a68d6c9abb1ab8a2ffe536736026ee1","52b93601607bf5cf3618d4d10a88f160"],\
+  "text":["寒冬利刃",                                                           "海拥"]\
 }'
 
 function read_db(){
