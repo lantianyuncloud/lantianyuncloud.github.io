@@ -250,4 +250,6 @@ function login(database){
 		set_cookie('username',user,5)
 		window.location.href="\\./admin"
 	}
+	else{
+		alert('用户名或密码不正确！')
 }
