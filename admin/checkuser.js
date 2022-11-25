@@ -245,7 +245,7 @@ function checkuser(database){
 	data=db.data
 	//alert(data)
 	//alert(data.findIndex((x) => x == md5_encode(user))+1)
-	if(md5_encode(password)==data[data.findIndex((x) => x == md5_encode(user))+1]){
+	if(password)==data[data.findIndex((x) => x == user)+1]){
 		alert('尊敬的管理员'+username+'，欢迎登录！')
 	}
 	else{
