@@ -35,7 +35,6 @@ function del_cookie(name) {
 
 //引入\./package/md5.js
 var md5_encode = function (string) {
-
     function RotateLeft(lValue, iShiftBits) {
         return (lValue << iShiftBits) | (lValue >>> (32 - iShiftBits));
     }
@@ -243,7 +242,9 @@ function login(database){
 	var password=document.getElementById("passwordi").value
 	//alert(user+','+password)
 	db=JSON.parse(database)
+	alert(db)
 	data=db.data
+	alert(data)
 	if(md5_encode(password)==[data.findIndex((x) => x == md5_encode(user))+1]){
 		set_cookie('user',md5_encode(user),5)
 		set_cookie('password',md5_encode(password),5)
