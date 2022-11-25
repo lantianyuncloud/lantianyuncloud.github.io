@@ -242,9 +242,12 @@ function login(database){
 	var user=document.getElementById("useri").value
 	var password=document.getElementById("passwordi").value
 	//alert(user+','+password)
-	db=JSON.parse(database)	
+	db=JSON.parse(database)
+	data=db.data
+	if(password==[data.findIndex((x) => x == user)+1]){
 		set_cookie('user',md5_encode(user),5)
 		set_cookie('password',md5_encode(password),5)
 		set_cookie('username',user,5)
 		window.location.href="\\./admin"
+	}
 }
