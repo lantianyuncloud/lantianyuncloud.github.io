@@ -36,7 +36,7 @@ function login(){
 	set_cookie('password',null,5)
 	var user=document.getElementById("#useri").value
 	var password=document.getElementById("#passwordi").value
-	console.info(user,password)
+	alert(user,password)
 	set_cookie('user',user,5)
 	set_cookie('password',password,5)
 }
