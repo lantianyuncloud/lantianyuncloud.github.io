@@ -252,4 +252,5 @@ function login(database){
 	}
 	else{
 		alert('用户名或密码不正确！')
+	}
 }
