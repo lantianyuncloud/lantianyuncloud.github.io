@@ -34,8 +34,8 @@ function del_cookie(name) {
 function login(){
 	set_cookie('user',null.5)
 	set_cookie('password',null,5)
-	var user=document.getElementById("useri").value
-	var password=document.getElementById("passwordi").value
+	var user=document.getElementById("#useri").value
+	var password=document.getElementById("#passwordi").value
 	console.info(user,password)
 	set_cookie('user',user,5)
 	set_cookie('password',password,5)
