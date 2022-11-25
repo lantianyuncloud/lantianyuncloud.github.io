@@ -32,7 +32,7 @@ function del_cookie(name) {
 }
 
 function login(){
-	set_cookie('user',null.5)
+	set_cookie('user',null,5)
 	set_cookie('password',null,5)
 	var user=document.getElementById("#useri").value
 	var password=document.getElementById("#passwordi").value
