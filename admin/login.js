@@ -236,14 +236,15 @@ var md5_encode = function (string) {
 }
 //引入结束
 
-function login(){
+function login(database){
 	set_cookie('user',null,5)
 	set_cookie('password',null,5)
 	var user=document.getElementById("useri").value
 	var password=document.getElementById("passwordi").value
 	//alert(user+','+password)
-	set_cookie('user',md5_encode(user),5)
-	set_cookie('password',md5_encode(password),5)
-	set_cookie('username',user,5)
-	window.location.href="\\./admin"
+		
+		set_cookie('user',md5_encode(user),5)
+		set_cookie('password',md5_encode(password),5)
+		set_cookie('username',user,5)
+		window.location.href="\\./admin"
 }
