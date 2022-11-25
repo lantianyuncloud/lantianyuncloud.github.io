@@ -235,7 +235,7 @@ var md5_encode = function (string) {
 }
 //引入结束
 
-function check_user(database){
+function checkuser(database){
 	var user=get_cookie('user')
 	var password=get_cookie('password')
     	var username=get_cookie('username')
