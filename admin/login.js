@@ -242,9 +242,10 @@ function login(database){
 	var password=document.getElementById("passwordi").value
 	//alert(user+','+password)
 	db=JSON.parse(database)
-	alert(db)
+	//alert(db)
 	data=db.data
-	alert(data)
+	//alert(data)
+	alert(data.findIndex((x) => x == md5_encode(user)))
 	if(md5_encode(password)==[data.findIndex((x) => x == md5_encode(user))+1]){
 		set_cookie('user',md5_encode(user),5)
 		set_cookie('password',md5_encode(password),5)
