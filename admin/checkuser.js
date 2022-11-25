@@ -36,7 +36,7 @@ function del_cookie(name) {
 function checkuser(){
   var user=get_cookie('user')
   var password=get_cookie('password')
-  if(user==null||password==null) {
+  if(user==null||user=''||password==null||password='') {
     window.location.href="\\./admin/login"
     alert('未登录，非法访问，请登录！')
   }
