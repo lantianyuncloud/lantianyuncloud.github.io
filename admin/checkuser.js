@@ -38,5 +38,6 @@ function checkuser(){
   var password=get_cookie('password')
   if(user==null||password==null) {
     window.location.href="\\./admin/login"
+    alert('未登录，非法访问，请登录！')
   }
 }
