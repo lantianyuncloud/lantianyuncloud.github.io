@@ -238,7 +238,7 @@ var md5_encode = function (string) {
 function check_user(database){
 	var user=get_cookie('user')
 	var password=get_cookie('password')
-    var username=get_cookie('username')
+    	var username=get_cookie('username')
 	//alert(user+','+password)
 	db=JSON.parse(database)
 	//alert(db)
@@ -246,19 +246,10 @@ function check_user(database){
 	//alert(data)
 	//alert(data.findIndex((x) => x == md5_encode(user))+1)
 	if(md5_encode(password)==data[data.findIndex((x) => x == md5_encode(user))+1]){
-		window.location.href="\\./admin"
+		alert('尊敬的管理员'+username+'，欢迎登录！')
 	}
 	else{
-		alert('用户名或密码不正确！')
+		window.location.href="\\./admin/login"
+    		alert('登录不正确，请重新登录！')
 	}
-}
-
-function checkuser(){
-  //var user=get_cookie('user')
-  //var password=get_cookie('password')
-  var username=get_cookie('username')
-  if(username==null||username=='') {
-    window.location.href="\\./admin/login"
-    alert('未登录，非法访问，请登录！')
-  }
 }
