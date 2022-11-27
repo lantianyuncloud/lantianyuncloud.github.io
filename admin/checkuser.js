@@ -235,7 +235,7 @@ var md5_encode = function (string) {
 }
 //引入结束
 
-function checkuser(database){
+function checkuser(database,welcome=false){
 	var user=get_cookie('user')
 	var password=get_cookie('password')
     	var username=get_cookie('username')
@@ -246,7 +246,9 @@ function checkuser(database){
 	//alert(data)
 	//alert(data.findIndex((x) => x == md5_encode(user))+1)
 	if(password==data[data.findIndex((x) => x == user)+1]){
-		alert('尊敬的管理员'+username+'，欢迎登录！')
+             if(welcome){
+                 alert('尊敬的管理员'+username+'，欢迎登录！')
+             }
 	}
 	else{
 		window.location.href="\\./admin/login"
