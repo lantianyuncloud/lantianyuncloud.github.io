@@ -1,5 +1,5 @@
-document.oncontextmenu = new Function(event.returnValue=false;);
-document.onselectstart = new Function(event.returnValue=false;);
+document.oncontextmenu = new Function(event.returnValue=false);
+document.onselectstart = new Function(event.returnValue=false);
 window.onload = function () {
 	document.onkeydown = function (){
 			var e = window.event  arguments[0];
